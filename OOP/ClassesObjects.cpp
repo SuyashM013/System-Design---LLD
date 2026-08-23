@@ -37,7 +37,7 @@ public:
 
     ~Student()
     {
-        cout << " Student Destructor" << endl;
+        cout << this->name <<" Student Destructor" << endl;
     }
 };
 
@@ -53,6 +53,11 @@ int main()
     Student s2("Suyash", 22, 1);
     Student s3("Joi", 22, 2);
     Student s4("John", 29, 3);
+
+    Student *s5 = new Student("vaishali", 22, 4);
+    s5->details();
+    delete s5;
+
 
 
     s2.details();
