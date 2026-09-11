@@ -10,7 +10,7 @@ public:
     Product(string _name, double _price) : name(_name), price(_price) {}
 };
 
-// voilating SRP, because it has more than one responsibility
+// Following SRP, because it has more than one responsibility
 class ShoppingCart
 {
 private:
@@ -35,21 +35,6 @@ public:
             total += p->price;
         }
         return total;
-    }
-
-    void printInvoice()
-    {
-        cout << "Invoice:" << endl;
-        for (auto p : products)
-        {
-            cout << p->name << " - $" << p->price << endl;
-        }
-        cout << "Total: $" << calculateTotal() << endl;
-    }
-
-    void saveToDB()
-    {
-        cout << "Saving to DB" << endl;
     }
 };
 
